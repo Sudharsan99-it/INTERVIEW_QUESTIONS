@@ -93,10 +93,8 @@ FROM Revenue;
 Given a "Sales" table with columns (TransactionID, Date, Amount), write a
 SQL query to calculate the average monthly sales for each product, using 
 the AVG() window function along with the PARTITION BY and GROUP BY clauses.*/
-
-month(Order_Date) as Order_Month,	
-
-CREATE TABLE Sales(Product VARCHAR(20),TransactionID INT, Date DATE, Amount	INT);
+	
+CREATE TABLE Sales(Product VARCHAR(20),TransactionID INT, Date DATE, Amount INT);
 	
 INSERT INTO Sales (TransactionID, Date, Amount, Product) VALUES
 (1, '2023-08-01', 100000, 'Vehicles'),

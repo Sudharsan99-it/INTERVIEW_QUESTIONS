@@ -47,9 +47,12 @@ VALUES
 (105,98000),
 (099,95000);
             
-SELECT MAX(SALARY) AS 2_ND_Salary
-FROM EMPLOYEE
-WHERE SALARY < (SELECT MAX(SALARY) FROM EMPLOYEE);
+SELECT MAX(e1.salary) AS second_highest_salary
+FROM employee e1
+WHERE e1.salary < (
+    SELECT MAX(e2.salary)
+    FROM employee e2 
+);
 
 /*3.)for the above employee table Find the nth highest salary from the Employee table. If there is no nth highest salary, 
 return null.The result format is in the following example.*/					

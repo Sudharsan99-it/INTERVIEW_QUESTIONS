@@ -59,11 +59,11 @@ return null.The result format is in the following example.*/
 					
 SELECT DISTINCT e1.salary AS nth_highest_salary
 FROM employee e1
-WHERE 4 - 1 = (  '''4 represents the n th highest salary'''
+WHERE (
     SELECT COUNT(DISTINCT e2.salary)
     FROM employee e2
-    WHERE e2.salary > e1.salary
-);
+    WHERE e2.salary >= e1.salary
+) = 2;
 
 ---4.)
 CREATE TABLE employee(
